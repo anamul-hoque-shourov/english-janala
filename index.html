@@ -1,283 +1,446 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>English জানালা</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English জানালা</title>
+        <!-- DaisyUI CDN -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/daisyui@5"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <!-- DaisyUI CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <!-- Google font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
 
-    <!-- Google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+        <!-- Custom styles -->
+        <style>
+            body {
+                margin: 0px;
+                padding: 0px;
+            }
 
-    <!-- Custom styles -->
-    <style>
-        body {
-            margin: 0px;
-            padding: 0px;
-        }
+            .poppins-font {
+                font-family: "Poppins", sans-serif;
+            }
 
-        .poppins-font {
-            font-family: "Poppins", sans-serif;
-        }
+            .hind-siliguri-font {
+                font-family: "Hind Siliguri", sans-serif;
+            }
 
-        .hind-siliguri-font {
-            font-family: "Hind Siliguri", sans-serif;
-        }
+            .navbar {
+                position: sticky;
+                top: 0;
+                z-index: 1;
+            }
 
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 1;
-        }
+            .active-button {
+                background-color: #422ad5;
+                color: white;
+            }
+        </style>
+    </head>
 
-        .active-button {
-            background-color: #422AD5;
-            color: white;
-        }
-    </style>
-</head>
+    <body class="poppins-font">
+        <!-- Login navbar section -->
+        <nav
+            id="navbar-section"
+            class="bg-[#C6BDBD40] lg:bg-gradient-to-r from-white via-[#C6BDBD40] to-white hidden"
+        >
+            <div
+                class="navbar flex-row justify-between items-center w-11/12 mx-auto py-3 mb-10"
+            >
+                <div class="w-[90%] lg:w-fit">
+                    <h1 class="text-2xl font-bold">
+                        English
+                        <img
+                            class="inline-block"
+                            src="./assets/logo.png"
+                            alt=""
+                        />
+                        <span class="hind-siliguri-font">জানালা</span>
+                    </h1>
+                </div>
 
-<body class="poppins-font">
-    <!-- Login navbar section -->
-    <nav id="navbar-section" class="bg-[#C6BDBD40] lg:bg-gradient-to-r from-white via-[#C6BDBD40] to-white hidden">
+                <div class="hidden lg:block">
+                    <button
+                        id="faq-btn"
+                        onclick="faqSectionCall()"
+                        class="btn btn-sm text-[#422AD5] hover:bg-[#422AD590] hover:text-black"
+                    >
+                        <img src="./assets/fa-circle-question.png" alt="" />FAQ
+                    </button>
 
-        <div class="navbar flex-row justify-between items-center w-11/12 mx-auto py-3 mb-10">
-            <div class="w-[90%] lg:w-fit">
-                <h1 class="text-2xl font-bold">English <img class="inline-block" src="./assets/logo.png" alt=""> <span
-                        class="hind-siliguri-font">জানালা</span></h1>
-            </div>
+                    <button
+                        id="learn-btn"
+                        onclick="vocabSectionCall()"
+                        class="btn btn-sm text-[#422AD5] hover:bg-[#422AD590] hover:text-black"
+                    >
+                        <img src="./assets/fa-book-open.png" alt="" />Learn
+                    </button>
 
-            <div class="hidden lg:block">
-                <button id="faq-btn" onclick="faqSectionCall()"
-                    class="btn btn-sm text-[#422AD5] hover:bg-[#422AD590] hover:text-black"><img
-                        src="./assets/fa-circle-question.png" alt="">FAQ</button>
+                    <button
+                        id="logout-button"
+                        onclick="logoutFunctionality()"
+                        class="btn btn-sm text-[#422AD5] hover:bg-[#422AD590] hover:text-black"
+                    >
+                        <img
+                            src="./assets/fa-arrow-right-from-bracket.png"
+                            alt=""
+                        />Logout
+                    </button>
+                </div>
 
-                <button id="learn-btn" onclick="vocabSectionCall()"
-                    class="btn btn-sm text-[#422AD5] hover:bg-[#422AD590] hover:text-black"><img
-                        src="./assets/fa-book-open.png" alt="">Learn</button>
-
-                <button id="logout-button" onclick="logoutFunctionality()"
-                    class="btn btn-sm text-[#422AD5] hover:bg-[#422AD590] hover:text-black"><img
-                        src="./assets/fa-arrow-right-from-bracket.png" alt="">Logout</button>
-            </div>
-
-            <div class="navbar-end lg:hidden">
-                <div class="dropdown dropdown-end">
-                    <div tabindex="0" role="button" class="btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            class="inline-block w-5 stroke-current">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
+                <div class="navbar-end lg:hidden">
+                    <div class="dropdown dropdown-end">
+                        <div tabindex="0" role="button" class="btn">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                class="inline-block w-5 stroke-current"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16"
+                                ></path>
+                            </svg>
+                        </div>
+                        <ul
+                            tabindex="0"
+                            class="menu menu-md dropdown-content text-[#422AD5] rounded-box z-10 mt-3 w-28 p-2 shadow"
+                        >
+                            <li onclick="faqSectionCall()">
+                                <a
+                                    ><img
+                                        src="./assets/fa-circle-question.png"
+                                        alt=""
+                                    />FAQ</a
+                                >
+                            </li>
+                            <li onclick="vocabSectionCall()">
+                                <a
+                                    ><img
+                                        src="./assets/fa-book-open.png"
+                                        alt=""
+                                    />Learn</a
+                                >
+                            </li>
+                            <li onclick="logoutFunctionality()">
+                                <a
+                                    ><img
+                                        src="./assets/fa-arrow-right-from-bracket.png"
+                                        alt=""
+                                    />Logout</a
+                                >
+                            </li>
+                        </ul>
                     </div>
-                    <ul tabindex="0"
-                        class="menu menu-md dropdown-content text-[#422AD5] rounded-box z-10 mt-3 w-28 p-2 shadow">
-                        <li onclick="faqSectionCall()"><a><img src="./assets/fa-circle-question.png" alt="">FAQ</a></li>
-                        <li onclick="vocabSectionCall()"><a><img src="./assets/fa-book-open.png" alt="">Learn</a></li>
-                        <li onclick="logoutFunctionality()"><a><img src="./assets/fa-arrow-right-from-bracket.png"
-                                    alt="">Logout</a></li>
-                    </ul>
                 </div>
             </div>
+        </nav>
 
-        </div>
-
-    </nav>
-
-    <!-- Logout navbar section -->
-    <nav id="logout-navbar" class="bg-[#C6BDBD30]">
-        <div class="w-11/12 mx-auto py-2">
-            <h1 class="text-2xl font-bold">English <img class="inline-block" src="./assets/logo.png" alt=""> <span
-                    class="hind-siliguri-font">জানালা</span></h1>
-        </div>
-    </nav>
-
-    <!-- Banner section -->
-    <section id="banner-section"
-        class="flex flex-col lg:flex-row justify-between items-center w-11/12 mx-auto mt-10 lg:mt-0">
-
-        <div class="w-full">
-            <h2 class="text-3xl font-bold mb-5"><span class="text-[#00BCFF]">English</span> is Easy!!</h2>
-
-            <p class="hind-siliguri-font lg:w-6/7 text-lg mb-5">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি
-                নতুন
-                হন
-                অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের
-                Interactive Lessons
-                আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
-
-            <fieldset class="fieldset rounded-box">
-
-                <input id="name-field" type="text" class="input mb-2" placeholder="Enter Your Name" required />
-                <input id="password-field" type="password" class="input mb-2" placeholder="Enter Your Password"
-                    required />
-
-            </fieldset>
-            <button id="login-button" onclick="loginFunctionality()"
-                class="btn mt-3 bg-[#422AD5] text-white hover:bg-[#422AD590] hover:text-black">Get
-                Started</button>
-
-
-        </div>
-
-        <div>
-            <img src="./assets/hero-student.png" alt="">
-        </div>
-
-    </section>
-
-    <!-- Vocabulary section -->
-    <section id="vocab-section" class="w-11/12 mx-auto py-20 hidden">
-
-        <h2 class="text-3xl font-bold text-center mb-10"><span class="text-[#00BCFF]">Let's</span> Learn Vocabularies
-        </h2>
-
-        <div id="button-div">
-        </div>
-
-        <!-- Loader -->
-        <div id="loader-div" class="text-center hidden">
-            <span class="loading loading-dots loading-xl"></span>
-        </div>
-
-        <div id="vocab-div">
-        </div>
-
-        <div id="initial-display" class="bg-[#F8F8F8] py-20 rounded-3xl text-center">
-            <p class="hind-siliguri-font text-[#79716B] text-lg mb-4">আপনি এখনো কোনো Lesson Select করেননি</p>
-            <p class="hind-siliguri-font text-4xl font-semibold">একটি Lesson Select করুন।</p>
-        </div>
-
-        <dialog id="vocab_details" class="modal">
-
-            <div class="modal-box">
-
-                <div id="details-div" class="border-1 p-5 border-[#d9e2eb] rounded-lg">
-                </div>
-
-                <div class="modal-action flex justify-start">
-                    <form method="dialog">
-                        <button class="btn rounded-lg bg-[#422AD5] text-white font-light">Complete Learning</button>
-                    </form>
-                </div>
-
-            </div>
-
-        </dialog>
-
-    </section>
-
-    <!-- FAQ section -->
-    <section id="faq-section" class="gap-5 w-11/12 mx-auto pt-10 mb-20 hidden">
-
-        <h2 class="text-3xl font-bold text-center my-10"><span class="text-[#00BCFF]">Frequently</span> Asked Questions
-        </h2>
-
-        <!-- FAQ-1 -->
-        <div class="collapse collapse-plus bg-[#C6BDBD40] border border-base-300">
-            <input type="radio" name="my-accordion-3" checked="checked" />
-            <div class="collapse-title font-semibold">1. What is the difference between var, let, and const?</div>
-            <div class="collapse-content text-[#62748E]">
-                <p class="text-md py-2">Var: Var is function scoped that means it can be accessed from anywhere inside
-                    the function(it is not confined within a block). Also, var can be both reassigned and redeclared
-                    inside the same scope. Var is hoisted when the script is loaded but is not defined, initially it is
-                    assigned as undefined so that it can be declared latter.</p>
-                <p class="text-md py-2">Let: Let is block scoped that means it can be accessed only from inside the
-                    block it is declared. Alike Var, Let is also hoisted but is not defined so it shows a reference
-                    error. The value of let variable can be reassigned but can not be redefined. value can be assigned
-                    after declaration.</p>
-                <p class="text-md py-2">Const: Const is almost same like let but the main two differences are const have
-                    to be assigned during declaration and can not be re assigned like let.</p>
-            </div>
-        </div>
-
-        <!-- FAQ-2 -->
-        <div class="collapse collapse-plus bg-[#C6BDBD40] border border-base-300">
-            <input type="radio" name="my-accordion-3" />
-            <div class="collapse-title font-medium">2. What is the difference between map(), forEach(), and filter()?
-            </div>
-            <div class="collapse-content text-[#62748E]">
-                <p class="text-md py-2">Map(): Map() returns a new array with the transformed values but it does not
-                    modify the original array</p>
-                <p class="text-md py-2">forEach(): forEach() executes a function for each element but does not return a
-                    new array rather it returns undefined.</p>
-                <p class="text-md py-2">Filter(): It returns a new array containing only elements that meet any
-                    condition applied but does not modify the original array.</p>
-            </div>
-        </div>
-
-        <!-- FAQ-3 -->
-        <div class="collapse collapse-plus bg-[#C6BDBD40] border border-base-300">
-            <input type="radio" name="my-accordion-3" />
-            <div class="collapse-title font-medium">3. Explain arrow functions and how they are different from regular
-                functions.</div>
-            <div class="collapse-content text-[#62748E]">
-                <p class="text-md py-2">Arrow functions have a shorter syntax than regular functions and inherit
-                    this, which make them ideal for callbacks and functional programming. Unlike regular functions, they
-                    do not have their own this, arguments, or the ability to be used as constructors with new.</p>
-            </div>
-        </div>
-
-        <!-- FAQ-4 -->
-        <div class="collapse collapse-plus bg-[#C6BDBD40] border border-base-300">
-            <input type="radio" name="my-accordion-3" />
-            <div class="collapse-title font-medium">4. How JavaScript Promises work?</div>
-            <div class="collapse-content text-[#62748E]">
-                <p class="text-md py-2">JavaScript Promises handle asynchronous operations by representing a value that
-                    might be available now, later, or never. A Promise has three states—pending, fulfilled, or
-                    rejected—and uses .then(), .catch(), and .finally() to handle success or failure.</p>
-            </div>
-        </div>
-
-        <!-- FAQ-5 -->
-        <div class="collapse collapse-plus bg-[#C6BDBD40] border border-base-300">
-            <input type="radio" name="my-accordion-3" />
-            <div class="collapse-title font-medium">5. How closures work in JavaScript?</div>
-            <div class="collapse-content text-[#62748E]">
-                <p class="text-md py-2">A closure in JavaScript is when an inner function remembers and accesses
-                    variables from its outer function even after the outer function has finished executing. This allows
-                    data encapsulation and is commonly used for private variables, callbacks, and function factories.
-                </p>
-            </div>
-        </div>
-
-    </section>
-
-    <!-- Footer section -->
-    <footer id="footer-section" class="border-t-2 border-[#FFEBEB]">
-
-        <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end w-11/12 mx-auto py-10">
-            <div class="mb-5 lg:mb-0">
-                <p class="text-2xl font-bold mb-2">English <img class="inline-block w-8" src="./assets/logo.png" alt="">
+        <!-- Logout navbar section -->
+        <nav id="logout-navbar" class="bg-[#C6BDBD30]">
+            <div class="w-11/12 mx-auto py-2">
+                <h1 class="text-2xl font-bold">
+                    English
+                    <img class="inline-block" src="./assets/logo.png" alt="" />
                     <span class="hind-siliguri-font">জানালা</span>
+                </h1>
+            </div>
+        </nav>
+
+        <!-- Banner section -->
+        <section
+            id="banner-section"
+            class="flex flex-col lg:flex-row justify-between items-center w-11/12 mx-auto mt-10 lg:mt-0"
+        >
+            <div class="w-full">
+                <h2 class="text-3xl font-bold mb-5">
+                    <span class="text-[#00BCFF]">English</span> is Easy!!
+                </h2>
+
+                <p class="hind-siliguri-font lg:w-6/7 text-lg mb-5">
+                    আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন
+                    অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons
+                    আপনাকে নিয়ে যাবে অন্য একটি Level এ
                 </p>
-                <p class="hind-siliguri-font text-lg font-semibold mb-2">ইংরেজী শিখুন সহজে</p>
-                <p class="text-xs">Providing ED-Tech Applications since 2025</p>
+
+                <fieldset class="fieldset rounded-box">
+                    <input
+                        id="name-field"
+                        type="text"
+                        class="input mb-2"
+                        placeholder="Enter Your Name"
+                        required
+                    />
+                    <input
+                        id="password-field"
+                        type="password"
+                        class="input mb-2"
+                        placeholder="Enter Your Password"
+                        required
+                    />
+                </fieldset>
+                <button
+                    id="login-button"
+                    onclick="loginFunctionality()"
+                    class="btn mt-3 bg-[#422AD5] text-white hover:bg-[#422AD590] hover:text-black"
+                >
+                    Get Started
+                </button>
             </div>
 
             <div>
-                <h6 class="font-semibold text-lg text-[#929294] mb-3">Follow Us</h6>
-                <div class="flex justify-start items-center gap-3">
-                    <a href=""><img class="w-6" src="./assets/fb-thumb.png" alt=""></a>
-                    <a href=""><img class="w-6" src="./assets/instagram-thumb.png" alt=""></a>
-                    <a href=""><img class="w-6" src="./assets/youtube-thumb.png" alt=""></a>
-                    <a href=""><img class="w-6" src="./assets/github-thumb.png" alt=""></a>
+                <img src="./assets/hero-student.png" alt="" />
+            </div>
+        </section>
+
+        <!-- Vocabulary section -->
+        <section id="vocab-section" class="w-11/12 mx-auto py-20 hidden">
+            <h2 class="text-3xl font-bold text-center mb-10">
+                <span class="text-[#00BCFF]">Let's</span> Learn Vocabularies
+            </h2>
+
+            <div id="button-div"></div>
+
+            <!-- Loader -->
+            <div id="loader-div" class="text-center hidden">
+                <span class="loading loading-dots loading-xl"></span>
+            </div>
+
+            <div id="vocab-div"></div>
+
+            <div
+                id="initial-display"
+                class="bg-[#F8F8F8] py-20 rounded-3xl text-center"
+            >
+                <p class="hind-siliguri-font text-[#79716B] text-lg mb-4">
+                    আপনি এখনো কোনো Lesson Select করেননি
+                </p>
+                <p class="hind-siliguri-font text-4xl font-semibold">
+                    একটি Lesson Select করুন।
+                </p>
+            </div>
+
+            <dialog id="vocab_details" class="modal">
+                <div class="modal-box">
+                    <div
+                        id="details-div"
+                        class="border-1 p-5 border-[#d9e2eb] rounded-lg"
+                    ></div>
+
+                    <div class="modal-action flex justify-start">
+                        <form method="dialog">
+                            <button
+                                class="btn rounded-lg bg-[#422AD5] text-white font-light"
+                            >
+                                Complete Learning
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </dialog>
+        </section>
+
+        <!-- FAQ section -->
+        <section
+            id="faq-section"
+            class="gap-5 w-11/12 mx-auto pt-10 mb-20 hidden"
+        >
+            <h2 class="text-3xl font-bold text-center my-10">
+                <span class="text-[#00BCFF]">Frequently</span> Asked Questions
+            </h2>
+
+            <!-- FAQ-1 -->
+            <div
+                class="collapse collapse-plus bg-[#C6BDBD40] border border-base-300"
+            >
+                <input type="radio" name="my-accordion-3" checked="checked" />
+                <div class="collapse-title font-semibold">
+                    1. What is the difference between var, let, and const?
+                </div>
+                <div class="collapse-content text-[#62748E]">
+                    <p class="text-md py-2">
+                        Var: Var is function scoped that means it can be
+                        accessed from anywhere inside the function(it is not
+                        confined within a block). Also, var can be both
+                        reassigned and redeclared inside the same scope. Var is
+                        hoisted when the script is loaded but is not defined,
+                        initially it is assigned as undefined so that it can be
+                        declared latter.
+                    </p>
+                    <p class="text-md py-2">
+                        Let: Let is block scoped that means it can be accessed
+                        only from inside the block it is declared. Alike Var,
+                        Let is also hoisted but is not defined so it shows a
+                        reference error. The value of let variable can be
+                        reassigned but can not be redefined. value can be
+                        assigned after declaration.
+                    </p>
+                    <p class="text-md py-2">
+                        Const: Const is almost same like let but the main two
+                        differences are const have to be assigned during
+                        declaration and can not be re assigned like let.
+                    </p>
                 </div>
             </div>
-        </div>
 
-    </footer>
+            <!-- FAQ-2 -->
+            <div
+                class="collapse collapse-plus bg-[#C6BDBD40] border border-base-300"
+            >
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-medium">
+                    2. What is the difference between map(), forEach(), and
+                    filter()?
+                </div>
+                <div class="collapse-content text-[#62748E]">
+                    <p class="text-md py-2">
+                        Map(): Map() returns a new array with the transformed
+                        values but it does not modify the original array
+                    </p>
+                    <p class="text-md py-2">
+                        forEach(): forEach() executes a function for each
+                        element but does not return a new array rather it
+                        returns undefined.
+                    </p>
+                    <p class="text-md py-2">
+                        Filter(): It returns a new array containing only
+                        elements that meet any condition applied but does not
+                        modify the original array.
+                    </p>
+                </div>
+            </div>
 
-    <!-- Script -->
-    <script src="./javascript/script.js"></script>
-</body>
+            <!-- FAQ-3 -->
+            <div
+                class="collapse collapse-plus bg-[#C6BDBD40] border border-base-300"
+            >
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-medium">
+                    3. Explain arrow functions and how they are different from
+                    regular functions.
+                </div>
+                <div class="collapse-content text-[#62748E]">
+                    <p class="text-md py-2">
+                        Arrow functions have a shorter syntax than regular
+                        functions and inherit this, which make them ideal for
+                        callbacks and functional programming. Unlike regular
+                        functions, they do not have their own this, arguments,
+                        or the ability to be used as constructors with new.
+                    </p>
+                </div>
+            </div>
 
+            <!-- FAQ-4 -->
+            <div
+                class="collapse collapse-plus bg-[#C6BDBD40] border border-base-300"
+            >
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-medium">
+                    4. How JavaScript Promises work?
+                </div>
+                <div class="collapse-content text-[#62748E]">
+                    <p class="text-md py-2">
+                        JavaScript Promises handle asynchronous operations by
+                        representing a value that might be available now, later,
+                        or never. A Promise has three states—pending, fulfilled,
+                        or rejected—and uses .then(), .catch(), and .finally()
+                        to handle success or failure.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ-5 -->
+            <div
+                class="collapse collapse-plus bg-[#C6BDBD40] border border-base-300"
+            >
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-medium">
+                    5. How closures work in JavaScript?
+                </div>
+                <div class="collapse-content text-[#62748E]">
+                    <p class="text-md py-2">
+                        A closure in JavaScript is when an inner function
+                        remembers and accesses variables from its outer function
+                        even after the outer function has finished executing.
+                        This allows data encapsulation and is commonly used for
+                        private variables, callbacks, and function factories.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer section -->
+        <footer id="footer-section" class="border-t-2 border-[#FFEBEB]">
+            <div
+                class="flex flex-col lg:flex-row justify-between items-start lg:items-end w-11/12 mx-auto py-10"
+            >
+                <div class="mb-5 lg:mb-0">
+                    <p class="text-2xl font-bold mb-2">
+                        English
+                        <img
+                            class="inline-block w-8"
+                            src="./assets/logo.png"
+                            alt=""
+                        />
+                        <span class="hind-siliguri-font">জানালা</span>
+                    </p>
+                    <p class="hind-siliguri-font text-lg font-semibold mb-2">
+                        ইংরেজী শিখুন সহজে
+                    </p>
+                    <p class="text-xs">
+                        Providing ED-Tech Applications since 2025
+                    </p>
+                </div>
+
+                <div>
+                    <h6 class="font-semibold text-lg text-[#929294] mb-3">
+                        Follow Us
+                    </h6>
+                    <div class="flex justify-start items-center gap-3">
+                        <a href=""
+                            ><img
+                                class="w-6"
+                                src="./assets/fb-thumb.png"
+                                alt=""
+                        /></a>
+                        <a href=""
+                            ><img
+                                class="w-6"
+                                src="./assets/instagram-thumb.png"
+                                alt=""
+                        /></a>
+                        <a href=""
+                            ><img
+                                class="w-6"
+                                src="./assets/youtube-thumb.png"
+                                alt=""
+                        /></a>
+                        <a href=""
+                            ><img
+                                class="w-6"
+                                src="./assets/github-thumb.png"
+                                alt=""
+                        /></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Script -->
+        <script src="./javascript/script.js"></script>
+    </body>
 </html>
